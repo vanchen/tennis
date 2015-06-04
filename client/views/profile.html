@@ -1,0 +1,193 @@
+<template name="profile">
+
+
+  <div id="profile-interface" style="visibility: visible;">
+    {{#if userOff}}
+    <div id="signinOn2" style="display:block">
+      <div class="row">
+        <div class="col-md-1"> </div>
+        <div class="col-md-10">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Email </label>
+              <div class="col-lg-8">
+                <input class="form-control" id="email" value="" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Password</label>
+              <div class="col-lg-8">
+                <input class="form-control" id="password" value="" type="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-8">
+                <input class="btn btn-primary login" value="Login" type="submit">
+                <span></span>
+              </div>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="registerOn2" style="display:none">
+
+      <div class="row">
+        <div class="col-md-1"> </div>
+        <div class="col-md-10">
+          <form class="form-horizontal" role="form">
+            <div class="form-group">
+              <label class="col-lg-3 control-label">First Name </label>
+              <div class="col-lg-8">
+                <input class="form-control" id="firstName" value="" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Last name:</label>
+              <div class="col-lg-8">
+                <input class="form-control" id="lastName" value="" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">Gender:</label>
+              <div class="col-lg-8">
+                <div class="ui-select">
+                  <select id="user_gender" class="form-control">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-lg-3 control-label">NTRP Rating:</label>
+              <div class="col-lg-8">
+                <div class="ui-select">
+                  <select id="user_skill" class="form-control">
+                    <option value="">
+                      <strong> </strong>
+                    </option>
+                    <option value="2.0">2.0</option>
+                    <option value="2.5">2.5</option>
+                    <option value="3.0">3.0</option>
+                    <option value="3.5">3.5</option>
+                    <option value="4.5"> 4.0</option>
+                    <option value="4.5">4.5</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Username:</label>
+              <div class="col-md-8">
+                <input class="form-control" id="username" value="" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Email:</label>
+              <div class="col-md-8">
+                <input class="form-control" id="email2" value="" type="text">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label">Password:</label>
+              <div class="col-md-8">
+                <input class="form-control" id="password2" value="" type="password">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-3 control-label"></label>
+              <div class="col-md-8">
+                <input class="btn btn-primary register" value="Register" type="submit">
+                <span></span>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-1"> </div>
+      </div>
+    </div>
+    {{else}} {{#with image}}
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-6">
+        <div class="text-center">
+          <img src="{{image.profile.image}}" class="avatar img-circle img-thumbnail" style="width:150px; height: 150px" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          <input type="file" class="myFileInput text-center center-block well well-sm">
+        </div>
+      </div>
+      <div class="col-md-3"></div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-1"> </div>
+      <div class="col-md-10">
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">First </label>
+            <div class="col-lg-8">
+              <input class="form-control" id="firstName" value="{{user.profile.firstName}}" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Last name:</label>
+            <div class="col-lg-8">
+              <input class="form-control" id="lastName" value="{{user.profile.lastName}}" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Gender:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_gender" class="form-control">
+                  <option value="Male">Male</option>
+                  <option value="Female">Female</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">NTRP Rating:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_skill" class="form-control">
+                  <option value="{{user.profile.skill}}">
+                    <strong> {{user.profile.skill}} </strong>
+                  </option>
+                  <option value="2.0">2.0</option>
+                  <option value="2.5">2.5</option>
+                  <option value="3.0">3.0</option>
+                  <option value="3.5">3.5</option>
+                  <option value="4.5"> 4.0</option>
+                  <option value="4.5">4.5</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Username:</label>
+            <div class="col-md-8">
+              <input class="form-control" id="username" value="{{user.username}}" type="text">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary profile-submit" value="Save Changes" type="submit">
+              <span></span>
+              <input class="btn btn-default profile-cancel" value="Cancel" type="button">
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-1"> </div>
+    </div>
+    {{/with}} {{/if}}
+  </div>
+
+</template>

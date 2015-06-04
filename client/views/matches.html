@@ -1,0 +1,70 @@
+<template name="matches">
+
+  <!-- Two routes, depending on Session variable 'matchOn' -->
+  {{#if matchOn}}
+{{>match_details}} {{else}} {{#if courtTrue}}
+  <div class="container" style="box-shadow: 0 0 3px #000; background: url(../img/noisy_net.png); color: #fff">
+    <h3> Current matches @
+      <strong> {{postName.court}} </strong>
+    </h3>
+  </div>
+  <div class="twt-wrapper">
+    <div class="panel panel-info" style="border:0px;">
+      <div class="panel-body">
+        <ul class="media-list">
+          {{#each post}} {{>currentMatches}} {{/each}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  {{else}}
+  <div class="container" style="box-shadow: 0 0 3px #000; background: url(../img/noisy_net.png); color: #fff">
+    <h3> Your Account</h3>
+  </div>
+  <br/>
+  <div class="col-md-3" style="border-right: 1px solid #E5E4E2; height:100%;">
+  <button type="button" id="profileOn" class="match-buttons btn btn-default btn-block text-left">
+      <h4 style="text-align: left;"> Profile </h4>
+  </button>
+  <div id="userOff">
+    <button type="button" id="signinOn" style="display:none;" class="match-buttons btn btn-default btn-block text-left">
+      <h4 style="text-align: left;"> Sign In </h4>
+    </button>
+    <button type="button" id="registerOn" style="display:none;" class="match-buttons btn btn-default btn-block text-left">
+      <h4 style="text-align: left;"> Register </h4>
+    </button>
+  </div>
+  <button type="button" id ="calenderOn" class="match-buttons btn btn-default btn-block text-left"> <h4 class="calenderOn" style="text-align: left;"> Calender </h4> </button>
+  <button type="button" id="currentOn" class="match-buttons btn btn-default btn-block"> <h4 style="text-align: left;"> Current Matches  </h4> </button>
+  <button type="button" id ="completedOn" class="match-buttons btn btn-default btn-block"> <h4 style="text-align: left;"> Completed Matches </h4> </button>
+  </div>
+  <div class="col-md-9" style="height: 100%; background:url(../img/pinstripe.png);">
+    <br/>
+  <div class="twt-wrapper">
+    <div class="panel panel-info" style="border:0px;">
+      <div class="panel-body">
+        <ul class="media-list">
+          {{#if profileOn}}
+            {{>profile}}
+
+          {{else}} {{#if calenderOn}}
+          {{> fullcalendar options}}
+          {{else}} {{#if currentOn}}
+          <h5>
+            <strong> Upcoming Matches </strong>
+          </h5>
+          {{#each posts}} {{>yourMatches}} {{/each}}
+          {{else}} {{#if completedOn}}
+          <h5>
+            <strong> Completed Matches </strong>
+          </h5>
+          {{#each completedPosts}} {{>yourMatches}} {{/each}}
+        {{/if}}{{/if}} {{/if}} {{/if}}
+      </ul>
+      </div>
+    </div>
+  </div>
+</div>
+  {{/if}} {{/if}}
+
+</template>

@@ -1,0 +1,26 @@
+<template name="map">
+
+{{>map_details}}
+
+{{>navbar}}
+
+
+<div id="sidebar-extension">
+  <div id="match-listings" style="visibility: visible;">
+    {{#if matchOn}}
+      {{#with match}}
+        {{>matches}}
+      {{/with}}
+    {{else}} {{#if profileOn}}
+      {{>matches}}
+    {{else}}
+      {{>matches}}
+    {{/if}}{{/if}}
+  </div>
+</div>
+
+<div class="map-container-host">
+{{> googleMap name="exampleMap" options=exampleMapOptions}}
+</div>
+
+</template>

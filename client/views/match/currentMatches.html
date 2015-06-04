@@ -1,0 +1,15 @@
+<template name="currentMatches">
+  <li class="media matches play-match" id="{{_id}}" style="cursor: pointer;">
+    <a href="#" class="pull-left">
+      <img src="{{userProf.profile.image}}" alt="" class="img-rounded" style="width:50px;height:50px;border:2px solid #e5e7e8;">
+    </a>
+    <div class="media-body">
+      <strong class="text-success" style="color:#000; ">vs. {{author}} </strong>(NTRP Rating:<strong> {{userProf.profile.skill}}</strong> )
+      <p>
+        <strong> {{type}} </strong> match scheduled for
+        <strong> {{time}} </strong>
+      </p>
+
+    </div>
+  </li>
+</template>

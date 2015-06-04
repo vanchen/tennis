@@ -1,0 +1,14 @@
+<template name="yourMatches">
+  <li class="media matches match-enlarge " id="{{_id}}">
+    <a href="#" class="pull-left">
+      <img src="{{userProf.profile.image}}" alt="" class="img-rounded" style="width:50px;height:50px;border:2px solid #e5e7e8;">
+    </a>
+    <div class="media-body">
+      <span class="text-muted pull-right">
+        <small class="text-muted">{{time}} </small>
+      </span>
+      <strong class="text-success" style="color:#000; ">@ {{court}} </strong>
+      <p> A {{type}} match vs {{#if thisMatch}} {{match.challenger}} {{else}} {{match.host}} {{/if}} </p>
+    </div>
+  </li>
+</template>

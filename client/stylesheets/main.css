@@ -1,0 +1,185 @@
+/* Styles for All Sizes: Maps */
+
+.map-container-host {
+  width: 94.8%;
+  height: calc(100% - 0);
+  position: absolute;
+  margin-left: 6.2%;
+  right: 0px;
+  top: 0px;
+  bottom: 0;
+  overflow: none;
+}
+
+#sidebar-extensions-map {
+  margin-left: 65%;
+  height: 100%;
+  width: 35%;
+  z-index: 1000;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  background: #fff;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
+}
+
+
+.navbar-map {
+  width: 14%;
+  margin-left:75%;
+  margin-top: 5px;
+  background: transparent;
+  border-bottom: 0px;
+}
+
+.hide-menu {
+  visibility: visible;
+}
+#profile-interface {
+  visibility: visible;
+}
+#match-listings {
+  visibility: hidden;
+}
+
+/*
+////////////////////////
+Sidebar Extension Styles
+////////////////////////
+Buttons */
+
+#signinOn{
+  background-color :#006699;
+  color : #fff;
+}
+#detailsOn {
+  background-color: #006699;
+  color: #fff;
+}
+#profileOn {
+  background-color: #006699;
+  color: #fff;
+}
+
+.matches2 {
+  width: 500px;
+}
+
+.play-match {
+  cursor: pointer;
+}
+
+.play-match:hover {
+  background-color: #f2f2f2;
+}
+
+.match-enlarge {
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.match-enlarge:hover {
+  background-color: #f2f2f2;
+}
+
+#match-details {
+  visibility: hidden;
+}
+.match-details-heading {
+  margin-left: 10px;
+}
+
+#googledirections {
+  height: 600px;
+  overflow-y: auto;
+  display: none;
+}
+#match-listings {
+  height: 800px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.twt-wrapper .media-list .media {
+    border-bottom:1px dashed #efefef;
+    margin-bottom:15px;
+}
+
+.twt-wrapper .panel-body {
+    max-height:700px;
+    overflow:auto;
+}
+
+.title {
+  font-family: "Source Sans Pro";
+  font-size: 20px;
+}
+
+.show-directions {
+  display: none;
+}
+
+.match-buttons {
+  border: 0px;
+
+}
+
+/* Sidebar Styles */
+
+#sidebar-wrapper {
+  z-index: 1000;
+  position: fixed;
+  left: 250px;
+  width: 100px;
+  height: 100%;
+  box-shadow: 0 0 30px black;
+  margin-left: -250px;
+  background: url(../img/noisy_net.png);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#sidebar-extension {
+  margin-left: 105px;
+  height: 100%;
+  width: 60%;
+  z-index: 1000;
+  position: fixed;
+  box-shadow: 0 0 30px black;
+  background: #fff;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sidebar-nav li {
+  text-indent: 20px;
+  height: 60px;
+  font-size: 20px;
+  line-height: 40px;
+  margin-top: 20px;
+}
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+}
+.sidebar-nav li a:hover {
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+}
